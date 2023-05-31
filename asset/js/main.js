@@ -37,7 +37,11 @@ function renderFeauredProduct(){
         }
     });
     $.each( xaomang(itemHTML), function( key, value ) {
-        slide.append(value);
+        if(key < 6) {
+            slide.append(value);
+        } else {
+            return
+        }
     });
 }
 
