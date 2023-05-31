@@ -724,7 +724,7 @@ ul.product-policises {
 .gioithieu_vijully .gioithieu_wrap {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .gioithieu_vijully .gioithieu_image {
     width: 48%;
