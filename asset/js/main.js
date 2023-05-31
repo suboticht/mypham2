@@ -171,6 +171,9 @@ function renderCateProduct() {
 function fixedHeader() {
     var h = $("#section__header").outerHeight();
     $(".main__page").css("padding-top", h);
+    if(mediaQuery.matches) {
+        $(".header__menu").css("margin-top", h);
+    }
 }
 
 function sliderJS() {
