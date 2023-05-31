@@ -47,7 +47,7 @@ header = `
                         </ul>
                     </li>
                     <li class="main__menu--item">
-                        <a href="./content-product/index.html" class="main__menu--link">TIN TỨC</a>
+                        <a href="./content-product/index.html" class="main__menu--link">GÓC LÀM ĐẸP</a>
                     </li>
                 </ul>
             </div>
