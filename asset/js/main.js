@@ -322,6 +322,9 @@ var getParam = function(){
     }
     return queryObject;
 }
+function toTop() {
+    
+}
 $(document).ready(function() {
     fixedHeader();
     if ($(".js_render_hot_product")[0]){
@@ -354,6 +357,25 @@ $(document).ready(function() {
             }
         })
     })
+    //button top
+    var pagetop = $('#button-top');
+
+    if ($(window).scrollTop() > 500) {
+        pagetop.fadeIn();
+    } else {
+        pagetop.fadeOut();
+    }
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+    pagetop.click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        return false;
+    });
 })
 $(document).load(function() {
 })

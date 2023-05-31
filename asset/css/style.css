@@ -823,6 +823,25 @@ ul.product-policises {
 }
 
 /*** footer ***/
+#button-top {
+    max-width: 7rem;
+    display: block;
+    position: fixed;
+    padding: 2rem;
+    border-radius: 999px;
+    right: 2%;
+    bottom: 10rem;
+    cursor: pointer;
+    z-index: 999;
+    background-color: #f495bf;
+}
+#button-top a {
+    width: 100%;
+}
+#button-top .fa-solid {
+    color: #fff;
+    font-size: 2rem;
+}
 footer {
     border-top: 3px solid #c30052;
 }

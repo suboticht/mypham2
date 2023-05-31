@@ -10,6 +10,7 @@ if($(".main__page").data("child-folder")) {
     }
 }
 footer = `
+    <div id="button-top" style=""><a href="#shoptop"><i class="fa-solid fa-chevron-up"></i></a></div>
     <div class="container">
         <div class="footer-top">
             <div class="column column-lg-3">
