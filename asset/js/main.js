@@ -246,64 +246,14 @@ var xaomang = function (array) {
     }
     return array;
 }
-function formatvnd(n) {
-    return Number(n).toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + " VND";
+function formatvnd(x) {
+    return Number(x).toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
 }
 
-var getParam = function(){
-    var queryString = window.location.search;
-    var queryObject = new Object();
-    if(queryString){
-      queryString = queryString.substring(1);
-      var parameters = queryString.split('&');
-    
-      for (var i = 0; i < parameters.length; i++) {
-        var element = parameters[i].split('=');
-    
-        var paramName = decodeURIComponent(element[0]);
-        var paramValue = decodeURIComponent(element[1]);
-        queryObject[paramName] = paramValue;
-      }
-    }
-    return queryObject;
-}
 
 function leafAnimation() {
     var scene = document.getElementById('scene');
     var parallax = new Parallax(scene);
-
-    TweenMax.from(".logo", 1, {
-      opacity: 0,
-      x: -20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.staggerFrom(".menu-links ul li", 1, {
-      opacity: 0,
-      x: -20,
-      ease: Power3.easeInOut
-    }, 0.08)
-
-    TweenMax.from(".search", 1, {
-      delay: .5,
-      opacity: 0,
-      x: -20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".account", 1, {
-      delay: .6,
-      opacity: 0,
-      x: -20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".cart", 1, {
-      delay: .7,
-      opacity: 0,
-      x: -20,
-      ease: Expo.easeInOut
-    })
 
     TweenMax.from(".juice", 1, {
       delay: 2,
@@ -346,47 +296,6 @@ function leafAnimation() {
       y: -800,
       ease: Expo.easeInOut
     })
-
-    TweenMax.from(".title", 1, {
-      delay: 1,
-      opacity: 0,
-      y: 20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".tagline", 1, {
-      delay: 1.3,
-      opacity: 0,
-      y: 20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".pages", 1, {
-      delay: 1.3,
-      opacity: 0,
-      y: 20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".more", 1, {
-      delay: 1.4,
-      opacity: 0,
-      y: 20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".desc", 1, {
-      delay: 1.4,
-      opacity: 0,
-      y: 20,
-      ease: Expo.easeInOut
-    })
-
-    TweenMax.from(".arrows", 1, {
-      delay: 2,
-      opacity: 0,
-      ease: Expo.easeInOut
-    })
 }
 
 function isInViewport(el) {
@@ -396,6 +305,23 @@ function isInViewport(el) {
     );
 }
 
+var getParam = function(){
+    var queryString = window.location.search;
+    var queryObject = new Object();
+    if(queryString){
+      queryString = queryString.substring(1);
+      var parameters = queryString.split('&');
+    
+      for (var i = 0; i < parameters.length; i++) {
+        var element = parameters[i].split('=');
+    
+        var paramName = decodeURIComponent(element[0]);
+        var paramValue = decodeURIComponent(element[1]);
+        queryObject[paramName] = paramValue;
+      }
+    }
+    return queryObject;
+}
 $(document).ready(function() {
     fixedHeader();
     if ($(".js_render_hot_product")[0]){
