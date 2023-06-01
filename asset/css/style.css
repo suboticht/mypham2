@@ -11,6 +11,9 @@ html {
 .bold {
     font-weight: bold;
 }
+.lazy {
+    display: none;
+}
 .FadeInDelay {
     opacity: 0;
     transform: translateY(40px);

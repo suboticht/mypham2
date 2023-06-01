@@ -17,7 +17,7 @@ function renderFeauredProduct(){
                 <div class="featured__box">
                     <a href="/products/single-product.html?product_id=${item.id}&category_id=${cateID}">
                         <div class="product__figure">
-                            <img src="${item.imageFolder}01.jpg" class="img_thumb" alt="${item.name}">
+                            <img data-original="${item.imageFolder}01.jpg" class="img_thumb lazy" alt="${item.name}">
                         </div>
                         <div class="product__price">
                             <strong class="price-sale">${formatvnd(item.price)}</strong>
@@ -51,9 +51,9 @@ function renderCategory() {
     arrCategory.forEach(function(item, index) {
         if(index < 6) {
             cateHTML = index === 5 ? 
-            `<li class="category__item last__category"><a href="/danhmuc/index.html"><div class="category__figure"><img src="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy loaded" alt="${item.name}"></div><div class="category__cat"><strong>Xem tất cả</strong></div></a></li>` 
+            `<li class="category__item last__category"><a href="/danhmuc/index.html"><div class="category__figure"><img data-original="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy" alt="${item.name}"></div><div class="category__cat"><strong>Xem tất cả</strong></div></a></li>` 
             : 
-            `<li class="category__item"><a href="/danhmuc/index.html?category_id=${item.id}"><div class="category__figure"><img src="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy loaded" alt="${item.name}"></div><div class="category__cat"><strong>${item.name}</strong></div></a></li>`;
+            `<li class="category__item"><a href="/danhmuc/index.html?category_id=${item.id}"><div class="category__figure"><img data-original="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy" alt="${item.name}"></div><div class="category__cat"><strong>${item.name}</strong></div></a></li>`;
             list.append(cateHTML)
         }
     });
@@ -74,7 +74,7 @@ function renderSingleProduct() {
 
     pd.image.forEach(function(item, index) {
         productMediaHTML = `<li class="item">
-            <img src="${pd.imageFolder}${item}.jpg" alt="combo VIJULLY">
+            <img data-original="${pd.imageFolder}${item}.jpg" class="lazy" alt="combo VIJULLY">
         </li>`;
         media_render.append(productMediaHTML)
     });
@@ -134,7 +134,7 @@ function renderCateProduct() {
                 <div class="featured__box">
                     <a href="/products/single-product.html?product_id=${item.id}&category_id=${pr["category_id"]}">
                         <div class="product__figure">
-                            <img src="${item.imageFolder}01.jpg" class="img_thumb" alt="${item.name}">
+                            <img data-original="${item.imageFolder}01.jpg" class="img_thumb lazy" alt="${item.name}">
                         </div>
                         <div class="product__price">
                             <strong class="price-sale">${formatvnd(item.price)}</strong>
@@ -326,7 +326,7 @@ function toTop() {
     
 }
 $(document).ready(function() {
-    fixedHeader();
+    //render
     if ($(".js_render_hot_product")[0]){
         renderFeauredProduct();
     }
@@ -339,7 +339,10 @@ $(document).ready(function() {
     if ($(".js_render_cate_product")[0]){
         renderCateProduct();
     }
-    sliderJS();
+    fixedHeader();
+    if($(".main__slider")[0] || $(".featured__slider")[0] || $(".slider")[0]) {
+        sliderJS();
+    }
     //logic menu
     $('.header_menu_sp').click(toggleMenu);
     if ($(".vijully__animation")[0]) {
@@ -376,6 +379,8 @@ $(document).ready(function() {
         $('body, html').animate({ scrollTop: 0 }, 500);
         return false;
     });
+    $("img.lazy").show().lazyload();
 })
 $(document).load(function() {
 })
+
