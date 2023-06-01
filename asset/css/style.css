@@ -391,7 +391,7 @@ html {
     justify-content: space-between;
     align-items: flex-start;
 }
-.ele_left {
+.single__product__wrap .ele_left {
     width: 76%;
 }
 .ele_right {
@@ -400,7 +400,7 @@ html {
     padding: 0.5rem;
     box-shadow: 0 3px 6px -4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.ele_left .head__details {
+.single__product__wrap .ele_left .head__details {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -814,28 +814,6 @@ ul.product-policises {
     line-height: 1.4;
     padding: 0 3rem;
 }
-.vijully_product .vijully_product_txt h6 {
-    position: relative;
-    padding: 0;
-    padding-bottom: 1rem;
-    margin: 0;
-    margin-bottom: 2rem;
-    font-weight: bold;
-    font-size: 2.5rem;
-    color: #080808;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-}
-.vijully_product .vijully_product_txt h6:before {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 30%;
-    height: 0.3rem;
-    content: "";
-    background-color: #c30052;
-}
 
 /*** footer ***/
 #button-top {
@@ -1001,6 +979,49 @@ footer {
     left: 68px;
     bottom: 0;
 }
+.style_ttl_03 h6 {
+    position: relative;
+    padding: 0;
+    padding-bottom: 1rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.style_ttl_03 h6:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    height: 0.3rem;
+    content: "";
+    background-color: #c30052;
+}
+
+/*** support page ***/
+.support__main__page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.support__main__page .ele_left {
+    width: 30%;
+    padding: 1rem;
+}
+.support__main__page .ele_right {
+    width: 69%;
+    padding: 1rem;
+}
+.support__main__page .support_list li {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
 
 @media only screen and (max-width: 750px) {
     .ele_sp {
@@ -1011,7 +1032,14 @@ footer {
     }
     html {
         /* font-size: calc(100vw / 75) */
-    };
+    }
+    .cos_line_ttl {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+    .cos_line_text {
+        margin-bottom: 0.5rem;
+    }
     /*** header ***/
     .header--link {
         text-align: center;
@@ -1225,17 +1253,17 @@ footer {
         font-size: 1.7rem;
     }
     /*** single product ***/
-    .ele_right {
+    .single__product__wrap .ele_right {
         width: 100%;
         display: none;
     } 
     .single__product__wrap,
-    .ele_left .head__details {
+    .single__product__wrap .ele_left .head__details {
         flex-direction: column;
     }
     .product__media,
     .product__info,
-    .ele_left {
+    .single__product__wrap .ele_left {
         width: 100%;
     }
     .product__info {
@@ -1341,6 +1369,23 @@ footer {
     }
     .news__item {
         flex-direction: column;
+    }
+    /*** support page ***/
+    .support__main__page {
+        flex-direction: column;
+    }
+    .support__main__page .ele_left {
+        display: none;
+        width: 100%;
+    }
+    .support__main__page .ele_right {
+        width: 100%;
+    }
+    .support__main__page .support_list li {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        font-weight: 400;
+        margin-bottom: 1rem;
     }
 }
 

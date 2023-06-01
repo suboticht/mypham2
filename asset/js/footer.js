@@ -28,13 +28,13 @@ footer = `
                         <a href="javascript:void(0)">Hướng dẫn đặt hàng</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Phương thức thanh toán</a>
+                        <a href="../hotro/phuongthucthanhtoan/index.html">Phương thức thanh toán</a>
                     </li>
                     <li class="support__list__item">
                         <a href="javascript:void(0)">Phương thức vận chuyển</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Chính sách đổi trả</a>
+                        <a href="../hotro/chinhsachdoitra/index.html">Chính sách đổi trả</a>
                     </li>
                 </ul>
             </div>
