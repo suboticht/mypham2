@@ -1,0 +1,124 @@
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.content02 {
+    display: none;
+}
+.hiragana {
+    border: 2px solid green;
+}
+.katagana {
+    border: 2px solid blue;
+}
+.button-cat {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.button-cat.hiragana:hover {
+    background-color: green;
+    color: #fff;
+}
+.button-cat.katagana:hover {
+    background-color: blue;
+    color: #fff;
+}
+.button-cat p {
+    margin: 0;
+}
+.main {
+    width: 320px;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+p.word-jp {
+    text-align: center;
+    font-size: 4rem;
+    line-height: 2;
+    font-weight: bold;
+    margin: 0 0 1rem;
+    border: 2px solid;
+}
+input[type="text"] {
+    float: left;
+    height: 1.5rem;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+.submit {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    border: 2px solid green;
+    color: green;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+}
+.submit:hover {
+    background: green;
+    color: #fff;
+}
+.next {
+    width: 30%;
+    float: left;
+    margin-left: 15px;
+    visibility: hidden;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 2px solid #092ee3;
+    color: #092ee3;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+.next:hover {
+    background-color: #092ee3;
+    color: #fff;
+}
+.next p {
+    margin: 0;
+}
+.result {
+    visibility: hidden;
+}
+.result p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    margin: 5px 0;
+}
+.button-a p span {
+    width: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid #000;
+    cursor: pointer;
+    text-align: center;
+}
+.button-a p span:hover {
+    opacity: 0.6;
+}
