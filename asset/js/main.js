@@ -74,7 +74,7 @@ function renderSingleProduct() {
 
     pd.image.forEach(function(item, index) {
         productMediaHTML = `<li class="item">
-            <img data-original="${pd.imageFolder}${item}.jpg" class="lazy" alt="combo VIJULLY">
+            <img src="${pd.imageFolder}${item}.jpg" alt="combo VIJULLY">
         </li>`;
         media_render.append(productMediaHTML)
     });
