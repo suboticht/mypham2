@@ -152,6 +152,7 @@ function renderCateProduct() {
             </li>`;
         }
     });
+    $(".js_render_ttl h6").text(arrCategory[pr["category_id"] - 1].name);
     const page = Math.ceil(cateProduct.length/itemPerPage);
     if(page > 1) {
         for(var i=0; i< page; i++) {
@@ -206,6 +207,8 @@ function renderSearchProduct() {
             </li>`;
     })
     
+    $(".js_render_ttl h6").text('Từ khóa tìm kiếm "'+pr["keyword"]+'"('+searchProduct.length+' sản phẩm)');
+
     const page = Math.ceil(searchProduct.length/itemPerPage);
     if(page > 1) {
         for(var i=0; i< page; i++) {

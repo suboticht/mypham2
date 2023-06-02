@@ -1060,6 +1060,10 @@ footer {
     margin-bottom: 1rem;
 }
 /*** search page ***/
+.search__main__page,
+.category__main__page {
+    padding: 1rem;
+}
 #search_product .search_product_list {
     display: flex;
     justify-content: flex-start;
