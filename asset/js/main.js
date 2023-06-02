@@ -171,15 +171,19 @@ function renderCateProduct() {
 
 function renderSearchProduct() {
     const pr = getParam();
-    let products = [], searchProduct = [];
+    let products = [], searchProduct = [], l;
     if(pr["keyword"]) {
+        l = '/search/index.html?keyword='+pr["keyword"]+'&';
         arrProducts.forEach((product, index) => {
             if(strvn(product.name.toLowerCase()).includes(strvn(pr["keyword"].toLowerCase()))) {
                 products.push(product);
             }
         });
+        $(".js_render_ttl h6").text('Từ khóa tìm kiếm "'+pr["keyword"]+'"('+products.length+' sản phẩm)');
     } else {
+        l = '/search/index.html?';
         products = arrProducts;
+        $(".js_render_ttl h6").text('Tất cả sản phẩm ('+products.length+' sản phẩm)');
     }
     products.forEach((item, index) => {
         var cateID = item.parent;
@@ -206,13 +210,12 @@ function renderSearchProduct() {
                 </div>
             </li>`;
     })
-    
-    $(".js_render_ttl h6").text('Từ khóa tìm kiếm "'+pr["keyword"]+'"('+searchProduct.length+' sản phẩm)');
 
     const page = Math.ceil(searchProduct.length/itemPerPage);
     if(page > 1) {
+        
         for(var i=0; i< page; i++) {
-            $(".js_render_page").append(`<li><a href="/search/index.html?keyword=${pr["keyword"]}&page=${i+1}">${i+1}</a></li>`);
+            $(".js_render_page").append(`<li><a href="${l}page=${i+1}">${i+1}</a></li>`);
         }
     }
 

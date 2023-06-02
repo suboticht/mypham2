@@ -862,7 +862,7 @@ ul.product-policises {
     right: 2%;
     bottom: 10rem;
     cursor: pointer;
-    z-index: 999;
+    z-index: 8;
     background-color: #f495bf;
 }
 #button-top a {
@@ -1454,6 +1454,9 @@ footer {
     #button-top {
         bottom: 2rem;
         padding: 1rem;
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 1.5rem;
     }
 }
 
