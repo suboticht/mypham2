@@ -1235,6 +1235,7 @@ footer {
     .main__menu--list {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
     .main__menu--list li.main__menu--item .main__menu--link {
         color: #000;
@@ -1264,6 +1265,17 @@ footer {
     .main__menu--list > li:hover .main__menu__child, 
     .main__menu--list .main__menu__child {
         display: none;
+    }
+    .header__menu__wrap {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .formFilter {
+        margin-top: 2rem;
+    }
+    .free-word-filter button {
+        background-color: #c30052;
     }
     /*** main page ***/
     .featured__item {
