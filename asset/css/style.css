@@ -1451,6 +1451,10 @@ footer {
     #search_product .search_product_list .featured__item {
         width: 50%;
     }
+    #button-top {
+        bottom: 2rem;
+        padding: 1rem;
+    }
 }
 
 
