@@ -28,10 +28,10 @@ header = `
                         <a href="/danhmuc/index.html?category_id=1" class="main__menu--link">VIJULLY</a>
                     </li>
                     <li class="main__menu--item has-dropdown">
-                        <p href="./content-product/index.html" class="main__menu--link dropdown">SON MÔI</p>
+                        <p href="#" class="main__menu--link dropdown">SON MÔI</p>
                         <ul class="main__menu__child">
                             <li class="main__menu__child--item">
-                                <a href="./content-product/index.html" class="main__menu--link">child 01</a>
+                                <a href="#" class="main__menu--link">child 01</a>
                                 <!-- <ul class="main__menu__child__child">
                                     <li class="main__menu__child__child--item">
                                         <a href="./content-product/index.html" class="main__menu--link">child 01</a>
@@ -42,14 +42,22 @@ header = `
                                 </ul> -->
                             </li>
                             <li class="main__menu__child--item">
-                                <a href="./content-product/index.html" class="main__menu--link">child 02</a>
+                                <a href="#" class="main__menu--link">child 02</a>
                             </li>
                         </ul>
                     </li>
                     <li class="main__menu--item">
-                        <a href="./news/index.html" class="main__menu--link">GÓC LÀM ĐẸP</a>
+                        <a href="/news/index.html" class="main__menu--link">GÓC LÀM ĐẸP</a>
                     </li>
                 </ul>
+                <form action="#" class="formFilter">
+                    <div class="form-group">
+                        <div class="free-word-filter">
+                            <input type="text" placeholder="nhập thông tin tìm kiếm" id="keyword" name="keyword">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>                                
+                    </div>
+                </form>
             </div>
         </div>
     </div>`
