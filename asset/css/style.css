@@ -662,6 +662,14 @@ ul.product-policises {
     align-items: flex-start;
     margin-bottom: 1.5rem;
 }
+.cos_line_img-50 {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+/* .cos_line_img-50 img {
+    width: 50%;
+} */
 .cos_list {
     list-style: decimal;
     padding-left: 2rem;
@@ -698,78 +706,6 @@ ul.product-policises {
     align-items: flex-start;
     flex-wrap: wrap;
 }
-
-/***Vijully***/
-
-.vijully__animation {
-    position: relative;
-    overflow: hidden;
-    min-height: 800px;
-    padding: 4rem 0;
-    z-index: 3;
-}
-.juice {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-}
-  
-  .juice img {
-    animation: float 4s ease-in-out infinite;
-    max-height: 600px;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translate(-50%, -46%);
-    }
-    50% {
-      transform: translate(-50%, -54%);
-    }
-    100% {
-      transform: translate(-50%, -46%);
-    }
-  }
-  
-  .leaves {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-  }
-  
-  .leaves img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .leaves .layer:nth-child(1) {
-    top: -10rem !important;
-    left: -48rem !important;
-  }
-  
-  .leaves .layer:nth-child(2) {
-    top: 1rem !important;
-    left: 16rem !important;
-  }
-  
-  .leaves .layer:nth-child(3) {
-    top: -30rem !important;
-    left: 16rem !important;
-  }
-  
-  .leaves .layer:nth-child(4) {
-    top: -1rem !important;
-    left: 32rem !important;
-  }
-  
-  .leaves .layer:nth-child(5) {
-    top: 20rem !important;
-    left: -32rem !important;
-  }
 .gioithieu_vijully {
     padding: 2rem 0.5rem;
 }
@@ -1071,6 +1007,77 @@ footer {
     flex-wrap: wrap;
 }
 
+/***Vijully***/
+
+.vijully__animation {
+    position: relative;
+    overflow: hidden;
+    min-height: 800px;
+    padding: 4rem 0;
+    z-index: 3;
+}
+.juice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+  
+.juice img {
+    animation: float 4s ease-in-out infinite;
+    max-height: 600px;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -46%);
+    }
+    50% {
+        transform: translate(-50%, -54%);
+    }
+    100% {
+        transform: translate(-50%, -46%);
+    }
+}
+
+.leaves {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+}
+
+.leaves img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.leaves .layer:nth-child(1) {
+    top: -10rem !important;
+    left: -48rem !important;
+}
+
+.leaves .layer:nth-child(2) {
+    top: 1rem !important;
+    left: 16rem !important;
+}
+
+.leaves .layer:nth-child(3) {
+    top: -30rem !important;
+    left: 16rem !important;
+}
+
+.leaves .layer:nth-child(4) {
+    top: -1rem !important;
+    left: 32rem !important;
+}
+
+.leaves .layer:nth-child(5) {
+    top: 20rem !important;
+    left: -32rem !important;
+}
 @media only screen and (max-width: 750px) {
     .ele_sp {
         display: block!important;
@@ -1094,6 +1101,9 @@ footer {
     }
     .header--logo {
         padding: 0.5rem 0;
+    }
+    .header--logo h1 {
+        margin: 0;
     }
     .header__logo--text a {
         font-size: 2rem;
@@ -1335,46 +1345,6 @@ footer {
     .mess a {
         font-size: 1.8rem;
     }
-    /*** Vijully ***/
-    .vijully__animation {
-        min-height: 500px;
-        padding: 4rem 0;
-    }
-    #scene li.layer:nth-child(1) img {
-        width: 7.2rem;
-    }
-    #scene li.layer:nth-child(2) img {
-        width: 7.9rem;
-    }
-    #scene li.layer:nth-child(3) img {
-        width: 6.3rem;
-    }
-    #scene li.layer:nth-child(4) img {
-        width: 3rem;
-    }
-    #scene li.layer:nth-child(5) img {
-        width: 6.9rem;
-    }
-    .leaves .layer:nth-child(1) {
-        top: -10rem !important;
-        left: -15rem !important;
-    }
-    .leaves .layer:nth-child(2) {
-        top: 3rem !important;
-        left: 8rem !important;
-    }
-    .leaves .layer:nth-child(3) {
-        top: -11rem !important;
-        left: 8rem !important;
-    }
-    .leaves .layer:nth-child(4) {
-        top: -4rem !important;
-        left: 14rem !important;
-    }
-    .leaves .layer:nth-child(5) {
-        top: 14rem !important;
-        left: -15rem !important;
-    }
     .style_ttl_01 h2 {
         font-size: 2rem;
         letter-spacing: 0;
@@ -1457,6 +1427,47 @@ footer {
     }
     .slick-dotted.slick-slider {
         margin-bottom: 1.5rem;
+    }
+    
+    /*** Vijully ***/
+    .vijully__animation {
+        min-height: 500px;
+        padding: 4rem 0;
+    }
+    #scene li.layer:nth-child(1) img {
+        width: 7.2rem;
+    }
+    #scene li.layer:nth-child(2) img {
+        width: 7.9rem;
+    }
+    #scene li.layer:nth-child(3) img {
+        width: 6.3rem;
+    }
+    #scene li.layer:nth-child(4) img {
+        width: 3rem;
+    }
+    #scene li.layer:nth-child(5) img {
+        width: 6.9rem;
+    }
+    .leaves .layer:nth-child(1) {
+        top: -10rem !important;
+        left: -15rem !important;
+    }
+    .leaves .layer:nth-child(2) {
+        top: 3rem !important;
+        left: 8rem !important;
+    }
+    .leaves .layer:nth-child(3) {
+        top: -11rem !important;
+        left: 8rem !important;
+    }
+    .leaves .layer:nth-child(4) {
+        top: -4rem !important;
+        left: 14rem !important;
+    }
+    .leaves .layer:nth-child(5) {
+        top: 14rem !important;
+        left: -15rem !important;
     }
 }
 
