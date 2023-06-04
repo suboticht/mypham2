@@ -1,14 +1,3 @@
-$(document).ready(function() {
-	$("#fullpage").fullpage({
-		anchors: ["firstPage", "secondPage", "thirdPage"],
-		menu: "#menu",
-		autoScrolling:false
-		// responsiveWidth: 750
-	});
-});
-
-
-
 
 // ScrollMagic: init controller
 var controller = new ScrollMagic.Controller();
@@ -27,10 +16,6 @@ var scene = new ScrollMagic.Scene({
 }) // the tween durtion can be omitted and defaults to 1
 // .addIndicators({ name: "2 (duration: 100)" }) // add indicators (requires plugin)
 .addTo(controller);
-
-
-
-
 
 
 // Tween - Section 3
