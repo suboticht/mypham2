@@ -19,22 +19,16 @@ footer = `
                 </div>
                 <ul class="support__list">
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Các câu hỏi thường gặp</a>
+                        <a href="/hotro/huongdandathang/index.html">Hướng dẫn đặt hàng</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Gửi yêu cầu hỗ trợ</a>
+                        <a href="/hotro/phuongthucthanhtoan/index.html">Phương thức thanh toán</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Hướng dẫn đặt hàng</a>
+                        <a href="/hotro/phivanchuyen/index.html">Phí vận chuyển</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="../hotro/phuongthucthanhtoan/index.html">Phương thức thanh toán</a>
-                    </li>
-                    <li class="support__list__item">
-                        <a href="javascript:void(0)">Phương thức vận chuyển</a>
-                    </li>
-                    <li class="support__list__item">
-                        <a href="../hotro/chinhsachdoitra/index.html">Chính sách đổi trả</a>
+                        <a href="/hotro/chinhsachdoitra/index.html">Chính sách đổi trả</a>
                     </li>
                 </ul>
             </div>
@@ -44,19 +38,16 @@ footer = `
                 </div>
                 <ul class="support__list">
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Hotline: 000000</a>
+                        Hotline: 0862263304
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Giới thiệu</a>
+                        <a href="/hotro/gioithieu/index.html">Giới thiệu</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Chính sách bảo mật</a>
+                        <a href="/hotro/chinhsachbaomat/index.html">Chính sách bảo mật</a>
                     </li>
                     <li class="support__list__item">
-                        <a href="javascript:void(0)">Điều khoản sử dụng</a>
-                    </li>
-                    <li class="support__list__item">
-                        <a href="javascript:void(0)">Liên hệ</a>
+                        <a href="/hotro/lienhe/index.html">Liên hệ</a>
                     </li>
                 </ul>
             </div>
