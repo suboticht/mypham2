@@ -479,8 +479,7 @@ $(document).ready(function() {
     
     $(".formFilter").on("submit", function (e) {
         e.preventDefault();
-        let dataFilter = $("form").serialize()
-        console.log(dataFilter)
+        let dataFilter = $("form").serialize();
         window.location="/search/index.html?"+dataFilter;
     });
     $("img.lazy").show().lazyload();
