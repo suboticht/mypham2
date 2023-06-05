@@ -34,11 +34,11 @@ footer = `
             </div>
             <div class="column column-lg-3">
                 <div class="footer__ttl">
-                    <h4>về emm skincare & cosmetics</h4>
+                    <h4>Emm skincare & cosmetics</h4>
                 </div>
                 <ul class="support__list">
                     <li class="support__list__item">
-                        Hotline: 0862263304
+                        Hotline: <strong>086.226.3304</strong>
                     </li>
                     <li class="support__list__item">
                         <a href="/hotro/gioithieu/index.html">Giới thiệu</a>
