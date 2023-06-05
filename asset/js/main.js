@@ -438,6 +438,9 @@ $(document).ready(function() {
     if ($(".js_render_search_product")[0]){
         renderSearchProduct();
     }
+    if ($(".lazy")[0]){
+        $("img.lazy").show().lazyload();
+    }
 
     fixedHeader();
     if($(".main__slider")[0] || $(".featured__slider")[0] || $(".slider")[0]) {
@@ -485,7 +488,6 @@ $(document).ready(function() {
         let dataFilter = $("form").serialize();
         window.location="/search/index.html?"+dataFilter;
     });
-    $("img.lazy").show().lazyload();
     $('.product__name').matchHeight({
         byRow: true,
     });
