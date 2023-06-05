@@ -69,7 +69,7 @@ function renderSingleProduct() {
     var info_render = $(".js_render_product_info");
     var details_render = $(".js_render_info_details");
 
-    document.title = pd.name + " | Mỹ phẩm chính hãng Huế";
+    document.title = pd.name + " | Emm skincare & cosmetics - Mỹ phẩm chính hãng Huế";
     $(".js_render_cate_name").text(arrCategory[pd.parent - 1].name);
     $(".js_render_product_name").text(pd.name);
 
@@ -124,7 +124,7 @@ function renderCateProduct() {
     const pd = arrProducts[pr["category_id"] - 1];
     var sale = pd.pricesale ? (((pd.pricesale - pd.price)/pd.pricesale)*100).toFixed(0) : "0";
 
-    document.title = arrCategory[pr["category_id"] - 1].name + " | Mỹ phẩm chính hãng Huế";
+    document.title = arrCategory[pr["category_id"] - 1].name + " | Emm skincare & cosmetics - Mỹ phẩm chính hãng Huế";
     $(".js_render_cate_name").text(arrCategory[pr["category_id"] - 1].name);
 
     arrProducts.forEach(function(item, index) {
