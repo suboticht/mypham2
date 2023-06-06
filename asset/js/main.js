@@ -122,17 +122,17 @@ function renderSingleProduct() {
 }
 
 function renderCateProduct() {
-    var cateProduct = [];
+    var cateProduct = [], count = 0;
     const pr = getParam();
-    const pd = arrProducts[pr["category_id"] - 1];
-    var sale = pd.pricesale ? (((pd.pricesale - pd.price)/pd.pricesale)*100).toFixed(0) : "0";
 
     document.title = arrCategory[pr["category_id"] - 1].name + " | Emm skincare & cosmetics - Mỹ phẩm chính hãng Huế";
     $(".js_render_cate_name").text(arrCategory[pr["category_id"] - 1].name);
 
     arrProducts.forEach(function(item, index) {
         if(item.parent == pr["category_id"] ) {
-            cateProduct[index] = `
+            const pd = arrProducts[index];
+            const sale = pd.pricesale ? (((pd.pricesale - pd.price)/pd.pricesale)*100).toFixed(0) : "0";
+            cateProduct[count] = `
             <li class="featured__item" data-productID=${item.id}>
                 <div class="featured__box">
                     <a href="/products/single-product.html?product_id=${item.id}&category_id=${pr["category_id"]}">
@@ -141,7 +141,7 @@ function renderCateProduct() {
                         </div>
                         <div class="product__price">
                             <strong class="price-sale">${formatvnd(item.price)}</strong>
-                            <span class="price">${item.pricesale ? item.pricesale : ""}</span>
+                            <span class="price">${item.pricesale ? formatvnd(item.pricesale) : ""}</span>
                             <span class="deal">${sale}%</span>
                         </div>
                         <div class="product__cat">
@@ -153,6 +153,7 @@ function renderCateProduct() {
                     </a>
                 </div>
             </li>`;
+            count++;
         }
     });
     $(".js_render_ttl h6").text(arrCategory[pr["category_id"] - 1].name);
@@ -164,7 +165,6 @@ function renderCateProduct() {
     }
 
     const currentPage = pr["page"] ? pr["page"] : 1;
-
     cateProduct.forEach(function(item, index) {
         if((currentPage - 1)*itemPerPage <= index && index < currentPage*itemPerPage) {
             $(".js_render_cate_product").append(item);

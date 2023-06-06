@@ -6,37 +6,37 @@ var arr = {
             'imageFolder' : '/asset/images/1/',
             'description'   : 'Vi Jully Cosmetic là thương hiệu có mặt trên thị trường gần 7 năm qua, nhờ chất lượng tuyệt đối nên đã lan truyền đến tay khách hàng một cách nhanh chóng. Với những nỗ lực cố gắng không ngừng, cùng với sự tín nhiệm của người dùng, tháng 05/2017 thương hiệu Vi Jully Cosmetic đã được vinh danh và nhận Cúp vàng “Thương hiệu tiêu biểu Châu Á Thái Bình Dương”',
         },
-        // {
-        //     'id'    : 2,
-        //     'name'  : 'Sửa rửa mặt',
-        //     'imageFolder' : '/asset/images/2/',
-        //     'thumbnails'    : 'facewash.jpg',
-        //     'description'   : '',
-        // },
-        // {
-        //     'id'    : 3,
-        //     'name'  : 'Son môi',
-        //     'imageFolder' : '/asset/images/3/',
-        //     'description'   : '',
-        // },
-        // {
-        //     'id'    : 4,
-        //     'name'  : 'Thực phẩm chức năng',
-        //     'imageFolder' : '/asset/images/4/',
-        //     'description'   : '',
-        // },
-        // {
-        //     'id'    : 5,
-        //     'name'  : 'Son dưỡng môi',
-        //     'imageFolder' : '/asset/images/6/',
-        //     'description'   : '',
-        // },
-        // {
-        //     'id'    : 6,
-        //     'name'  : 'Sửa rửa mặt',
-        //     'imageFolder' : '/asset/images/5/',
-        //     'description'   : '',
-        // },
+        {
+            'id'    : 2,
+            'name'  : 'Chăm sóc da - skincare',
+            'imageFolder' : '/asset/images/2/',
+            'thumbnails'    : 'facewash.jpg',
+            'description'   : '',
+        },
+        {
+            'id'    : 3,
+            'name'  : 'Son môi',
+            'imageFolder' : '/asset/images/3/',
+            'description'   : '',
+        },
+        {
+            'id'    : 4,
+            'name'  : 'Trang điểm - makeup',
+            'imageFolder' : '/asset/images/4/',
+            'description'   : '',
+        },
+        {
+            'id'    : 5,
+            'name'  : 'Dụng cụ - tools',
+            'imageFolder' : '/asset/images/6/',
+            'description'   : '',
+        },
+        {
+            'id'    : 6,
+            'name'  : 'Nước hoa',
+            'imageFolder' : '/asset/images/5/',
+            'description'   : '',
+        },
     ],
     'product'   : [
         {
@@ -125,6 +125,17 @@ var arr = {
             'hot'   : 1,
             'description'   : '<p class="cos_line_ttl">Thể tích</p><p class="cos_line_text">350ml</p><p class="cos_line_ttl">Công dụng chính:</p><p class="cos_line_text">giúp làm sạch sâu loại bỏ những bụi bẩn trên da, cấp ẩm cho da, giúp cho da luôn trở nên săn chắc cùng với hương thơm thật dễ chịu và thanh lịch</p><p class="cos_line_ttl">Thành phần nổi bật:</p><p class="cos_line_text">chiết xuất từ rong biển, tạo mẫu, tảo xoắn</p><p class="cos_line_ttl">Thành phần chi tiết:</p><ul class="cos_list"><li class="cos_list_item">Olive Oil PEG-7 Esters: Thành phần này là một dạng dẫn xuất dầu ô liu, có công dụng làm mềm và dưỡng ẩm cho da, giúp làm dịu da và tái tạo da khô và tổn thương.</li><li class="cos_list_item">Spirulina Maxima Extract, Fucus Vesiculosus Extract, Laminaria Digitata Extract, Porphyra Umbilicalis Extract, Ascophyllum Nodosum Extract: Các chiết xuất từ tảo biển này có chứa nhiều dưỡng chất thiết yếu và khoáng chất, có tác dụng làm sạch da, cung cấp dưỡng chất và vitamin, và giúp làm mềm và làm dịu da.</li><li class="cos_list_item">Tocopherol: Đây là dạng vitamin E, một chất chống oxy hóa mạnh mẽ, có tác dụng bảo vệ da khỏi tổn thương của các gốc tự do và tác động của môi trường, giúp da trở nên mềm mịn và khỏe mạnh.</li><li class="cos_list_item">Polyquaternium-7: Thành phần này là một chất làm mềm và chống tĩnh điện, giúp làm mượt và dễ chải tóc. Ngoài ra, nó cũng có tác dụng làm dịu da và giữ ẩm cho da.</li><li class="cos_list_item">Benzophenone-4: Là một chất chống tia tử ngoại (UV), có tác dụng bảo vệ da khỏi tác động có hại của ánh nắng mặt trời.</li><li class="cos_list_item">Gluconolactone, Calcium Gluconate: Đây là các muối gluconate, có tác dụng làm dịu và làm mềm da, giúp cân bằng độ ẩm và làm dịu các vết bỏng nhẹ.</li><li class="cos_list_item">Magnesium Nitrate và Magnesium Chloride: Đây là các muối khoáng có tác dụng làm dịu và làm mềm da, giúp cân bằng độ ẩm và làm dịu các vết bỏng nhẹ.</li><li class="cos_list_item">Sodium Benzoate, Potassium Sorbate: Đây là các chất bảo quản tự nhiên, giúp sản phẩm duy trì tính ổn định và tránh sự phát triển của vi khuẩn và nấm.</li></ul><p class="cos_line_ttl">Mùi hương:</p><ul class="cos_list_02"><li class="cos_list_item">Top note: tiêu tử xuyên, nghệ</li><li class="cos_list_item">Middle note: hoa hồng tháng 5, hoa hồng bulgari, hoa hồng thổ nhỉ ki</li><li class="cos_list_item">Bottom note: hoặc hương, đậu tonka</li></ul>',
             'imageFolder' : '/asset/images/1/suatammauxanh/',
+            'image' : ["01"]
+        },
+        {
+            'id'    : 9,
+            'parent': 2,
+            'name'  : 'kem chống nắng Anessa',
+            'price' : '329000',
+            'pricesale' : '',
+            'hot'   : 0,
+            'description'   : '<p class="cos_line_text">🍥 𝑲𝒆𝒎 𝒄𝒉𝒐̂́𝒏𝒈 𝒏𝒂̆́𝒏𝒈 𝑨𝒏𝒆𝒔𝒔𝒂 - 𝒅𝒊̣𝒖 𝒏𝒉𝒆̣ 𝒄𝒉𝒐 𝒄𝒂̉ 𝒍𝒂̀𝒏 𝒅𝒂 𝒏𝒉𝒂̣𝒚 𝒄𝒂̉𝒎 𝒏𝒉𝒂̂́𝒕🌤</p><p class="cos_line_text">𝐋𝐚̀𝐧𝐡 𝐭𝐢́𝐧𝐡 đ𝐞̂́𝐧 𝐦𝐮̛́𝐜 𝐞𝐦 𝐛𝐞́ 𝐜𝐮̃𝐧𝐠 𝐝𝐮̀𝐧𝐠 đ𝐮̛𝐨̛̣𝐜 𝐥𝐮𝐨̂𝐧. 𝐃𝐮̀𝐧𝐠 đ𝐞̂́𝐧 đ𝐚̂𝐮 𝐭𝐡𝐚̂́𝐦 đ𝐞̂́𝐧 đ𝐚̂́𝐲 😜</p><p class="cos_line_text">𝐂𝐡𝐨̂́𝐧𝐠 𝐧𝐚̆́𝐧𝐠 𝐯𝐮̛𝐨̛̣𝐭 𝐭𝐫𝐨̣̂𝐢 + 𝐥𝐚̂𝐮 𝐭𝐫𝐨̂𝐢 𝐯𝐚̀ 𝐭𝐡𝐚̂́𝐦 𝐧𝐡𝐚𝐧𝐡</p><p class="cos_line_text">Về sẵn đủ bộ :</p><ul class="cos_list_02"><li class="cos_list_item">📍 𝗞𝗖𝗡 𝗔𝗻𝗲𝘀𝘀𝗮 𝗧𝗿𝗮̆́𝗻𝗴 - 𝗧𝗼𝗻𝗲 𝘂𝗽: Dưỡng trắng, lên tone trắng hồng</li><li class="cos_list_item">📍 𝗞𝗖𝗡 𝗔𝗻𝗲𝘀𝘀𝗮 𝗩𝗮̀𝗻𝗴 𝗠𝗶𝗹𝗱 𝗠𝗶𝗹𝗸 (𝗕𝗲𝘀𝘁 𝗦𝗲𝗹𝗹𝗲𝗿): Dạng sữa, dành cho da hỗn hợp, lên tone, ko gây khô da</li><li class="cos_list_item">📍 𝗞𝗖𝗡 𝗔𝗻𝗲𝘀𝘀𝗮 𝗛𝗼̂̀𝗻𝗴: vô cùng lành tính dùng cho Da nhạy cảm</li></ul><p class="cos_line_text">❤️ Ưu điểm: Các dòng kcn Anessa đều rất lành tính, ko gây kích ứng da, thành phần dưỡng cao cấp nhưng ko gây nhờn rít bí bách cho da.<br>Phù hợp với mọi loại da đặc biệt da dầu, da nhạy cảm, da dễ kích ứng đều dùng được 🥰</p>',
+            'imageFolder' : '/asset/images/2/chongnanganessa/',
             'image' : ["01"]
         },
     ]
