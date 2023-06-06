@@ -53,8 +53,8 @@ function renderCategory() {
     var cateHTML;
     var list = $(".section__cate .js_render_category");
     arrCategory.forEach(function(item, index) {
-        if(index < 6) {
-            cateHTML = index === 5 ? 
+        if(index < 12) {
+            cateHTML = index === 11 ? 
             `<li class="category__item last__category"><a href="/danhmuc/index.html"><div class="category__figure"><img data-original="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy" alt="${item.name}"></div><div class="category__cat"><strong>Xem tất cả</strong></div></a></li>` 
             : 
             `<li class="category__item"><a href="/danhmuc/index.html?category_id=${item.id}"><div class="category__figure"><img data-original="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy" alt="${item.name}"></div><div class="category__cat"><strong>${item.name}</strong></div></a></li>`;
@@ -229,10 +229,6 @@ function renderSearchProduct() {
             $(".js_render_search_product").append(item);
         }
     })
-}
-function match(input, obj) {
-    var matched = Object.keys(obj).find(key => input.toLowerCase().search(key) > -1);
-    return obj[matched] || null;
 }
 
 function strvn(str) {
