@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css?family=lato:400,700,300');
+
 
 html {
   background-color: #f495bf;
@@ -20,7 +19,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }
-
+#fullpage {
+  font-family: Roboto, sans-serif;
+}
 .section{
   min-height: 100vh;
 }
@@ -87,7 +88,7 @@ h1 {
   font-size: 1.2rem;
 }
 
-#bg{
+#main-bg{
   z-index: -1;
   position: fixed;
   top: 0%;
@@ -96,7 +97,7 @@ h1 {
   height: 100%;
 }
 
-#bg img {
+#main-bg img {
   position: absolute;
   top: 40%;
   left: 50%;

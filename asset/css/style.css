@@ -11,6 +11,9 @@ html {
 .bold {
     font-weight: bold;
 }
+.center {
+    text-align: center;
+}
 .lazy {
     display: none;
 }
@@ -89,10 +92,13 @@ html {
     z-index: 9;
 }
 .header--logo {
-    padding: 1.8rem 0;
+    padding: 0.5rem 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+.header--logo h1.header__logo--text {
+    margin: 0;
 }
 .header__logo--text a {
     font-size: 3rem;

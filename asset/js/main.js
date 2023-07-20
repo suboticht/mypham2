@@ -1,3 +1,6 @@
+//match height
+!function(t){"use strict";"function"==typeof define&&define.amd?define(["jquery"],t):"undefined"!=typeof module&&module.exports?module.exports=t(require("jquery")):t(jQuery)}(function(t){var e=-1,a=-1,o=function(t){return parseFloat(t)||0},n=function(e){var a=t(e),n=null,r=[];return a.each(function(){var e=t(this),a=e.offset().top-o(e.css("margin-top")),i=r.length>0?r[r.length-1]:null;null===i?r.push(e):1>=Math.floor(Math.abs(n-a))?r[r.length-1]=i.add(e):r.push(e),n=a}),r},r=function(e){var a={byRow:!0,property:"height",target:null,remove:!1};return"object"==typeof e?t.extend(a,e):("boolean"==typeof e?a.byRow=e:"remove"===e&&(a.remove=!0),a)},i=t.fn.matchHeight=function(e){var a=r(e);if(a.remove){var o=this;return this.css(a.property,""),t.each(i._groups,function(t,e){e.elements=e.elements.not(o)}),this}return this.length<=1&&!a.target||(i._groups.push({elements:this,options:a}),i._apply(this,a)),this};i.version="master",i._groups=[],i._throttle=80,i._maintainScroll=!1,i._beforeUpdate=null,i._afterUpdate=null,i._rows=n,i._parse=o,i._parseOptions=r,i._apply=function(e,a){var s=r(a),c=t(e),h=[c],p=t(window).scrollTop(),l=t("html").outerHeight(!0),u=c.parents().filter(":hidden");return u.each(function(){var e=t(this);e.data("style-cache",e.attr("style"))}),u.css("display","block"),s.byRow&&!s.target&&(c.each(function(){var e=t(this),a=e.css("display");"inline-block"!==a&&"flex"!==a&&"inline-flex"!==a&&(a="block"),e.data("style-cache",e.attr("style")),e.css({display:a,"padding-top":"0","padding-bottom":"0","margin-top":"0","margin-bottom":"0","border-top-width":"0","border-bottom-width":"0",height:"100px",overflow:"hidden"})}),h=n(c),c.each(function(){var e=t(this);e.attr("style",e.data("style-cache")||"")})),t.each(h,function(e,a){var n=t(a),r=0;if(s.target)r=s.target.outerHeight(!1);else{if(s.byRow&&n.length<=1)return void n.css(s.property,"");n.each(function(){var e=t(this),a=e.css("display");"inline-block"!==a&&"flex"!==a&&"inline-flex"!==a&&(a="block");var o={display:a};o[s.property]="",e.css(o),e.outerHeight(!1)>r&&(r=e.outerHeight(!1)),e.css("display","")})}n.each(function(){var e=t(this),a=0;s.target&&e.is(s.target)||("border-box"!==e.css("box-sizing")&&(a+=o(e.css("border-top-width"))+o(e.css("border-bottom-width")),a+=o(e.css("padding-top"))+o(e.css("padding-bottom"))),e.css(s.property,r-a+"px"))})}),u.each(function(){var e=t(this);e.attr("style",e.data("style-cache")||null)}),i._maintainScroll&&t(window).scrollTop(p/l*t("html").outerHeight(!0)),this},i._applyDataApi=function(){var e={};t("[data-match-height], [data-mh]").each(function(){var a=t(this),o=a.attr("data-mh")||a.attr("data-match-height");o in e?e[o]=e[o].add(a):e[o]=a}),t.each(e,function(){this.matchHeight(!0)})};var s=function(e){i._beforeUpdate&&i._beforeUpdate(e,i._groups),t.each(i._groups,function(){i._apply(this.elements,this.options)}),i._afterUpdate&&i._afterUpdate(e,i._groups)};i._update=function(o,n){if(n&&"resize"===n.type){var r=t(window).width();if(r===e)return;e=r}o?-1===a&&(a=setTimeout(function(){s(n),a=-1},i._throttle)):s(n)},t(i._applyDataApi),t(window).bind("load",function(t){i._update(!1,t)}),t(window).bind("resize orientationchange",function(t){i._update(!0,t)})});
+
 
 var arrProducts = arr['product'];
 var arrCategory = arr['category'];
@@ -50,8 +53,8 @@ function renderCategory() {
     var cateHTML;
     var list = $(".section__cate .js_render_category");
     arrCategory.forEach(function(item, index) {
-        if(index < 6) {
-            cateHTML = index === 5 ? 
+        if(index < 12) {
+            cateHTML = index === 11 ? 
             `<li class="category__item last__category"><a href="/danhmuc/index.html"><div class="category__figure"><img data-original="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy" alt="${item.name}"></div><div class="category__cat"><strong>Xem tất cả</strong></div></a></li>` 
             : 
             `<li class="category__item"><a href="/danhmuc/index.html?category_id=${item.id}"><div class="category__figure"><img data-original="${item.imageFolder}thumbnails.jpg" class="img_thumb lazy" alt="${item.name}"></div><div class="category__cat"><strong>${item.name}</strong></div></a></li>`;
@@ -69,7 +72,7 @@ function renderSingleProduct() {
     var info_render = $(".js_render_product_info");
     var details_render = $(".js_render_info_details");
 
-    document.title = pd.name + " | Mỹ phẩm chính hãng Huế";
+    document.title = pd.name + " | Emm skincare & cosmetics - Mỹ phẩm chính hãng Huế";
     $(".js_render_cate_name").text(arrCategory[pd.parent - 1].name);
     $(".js_render_product_name").text(pd.name);
 
@@ -119,17 +122,17 @@ function renderSingleProduct() {
 }
 
 function renderCateProduct() {
-    var cateProduct = [];
+    var cateProduct = [], count = 0;
     const pr = getParam();
-    const pd = arrProducts[pr["category_id"] - 1];
-    var sale = pd.pricesale ? (((pd.pricesale - pd.price)/pd.pricesale)*100).toFixed(0) : "0";
 
-    document.title = arrCategory[pr["category_id"] - 1].name + " | Mỹ phẩm chính hãng Huế";
+    document.title = arrCategory[pr["category_id"] - 1].name + " | Emm skincare & cosmetics - Mỹ phẩm chính hãng Huế";
     $(".js_render_cate_name").text(arrCategory[pr["category_id"] - 1].name);
 
     arrProducts.forEach(function(item, index) {
         if(item.parent == pr["category_id"] ) {
-            cateProduct[index] = `
+            const pd = arrProducts[index];
+            const sale = pd.pricesale ? (((pd.pricesale - pd.price)/pd.pricesale)*100).toFixed(0) : "0";
+            cateProduct[count] = `
             <li class="featured__item" data-productID=${item.id}>
                 <div class="featured__box">
                     <a href="/products/single-product.html?product_id=${item.id}&category_id=${pr["category_id"]}">
@@ -138,7 +141,7 @@ function renderCateProduct() {
                         </div>
                         <div class="product__price">
                             <strong class="price-sale">${formatvnd(item.price)}</strong>
-                            <span class="price">${item.pricesale ? item.pricesale : ""}</span>
+                            <span class="price">${item.pricesale ? formatvnd(item.pricesale) : ""}</span>
                             <span class="deal">${sale}%</span>
                         </div>
                         <div class="product__cat">
@@ -150,6 +153,7 @@ function renderCateProduct() {
                     </a>
                 </div>
             </li>`;
+            count++;
         }
     });
     $(".js_render_ttl h6").text(arrCategory[pr["category_id"] - 1].name);
@@ -161,7 +165,6 @@ function renderCateProduct() {
     }
 
     const currentPage = pr["page"] ? pr["page"] : 1;
-
     cateProduct.forEach(function(item, index) {
         if((currentPage - 1)*itemPerPage <= index && index < currentPage*itemPerPage) {
             $(".js_render_cate_product").append(item);
@@ -226,10 +229,6 @@ function renderSearchProduct() {
             $(".js_render_search_product").append(item);
         }
     })
-}
-function match(input, obj) {
-    var matched = Object.keys(obj).find(key => input.toLowerCase().search(key) > -1);
-    return obj[matched] || null;
 }
 
 function strvn(str) {
@@ -435,6 +434,9 @@ $(document).ready(function() {
     if ($(".js_render_search_product")[0]){
         renderSearchProduct();
     }
+    if ($(".lazy")[0]){
+        $("img.lazy").show().lazyload();
+    }
 
     fixedHeader();
     if($(".main__slider")[0] || $(".featured__slider")[0] || $(".slider")[0]) {
@@ -482,7 +484,9 @@ $(document).ready(function() {
         let dataFilter = $("form").serialize();
         window.location="/search/index.html?"+dataFilter;
     });
-    $("img.lazy").show().lazyload();
+    $('.product__name').matchHeight({
+        byRow: true,
+    });
 })
 $(document).load(function() {
 })
