@@ -169,6 +169,9 @@ html {
 .pc {
     display: block!important;
 }
+.hidden {
+    display: none;
+}
 .container {
     width: 100%;
     max-width: 1200px;
@@ -275,6 +278,17 @@ html {
     background-color: rgb(0, 0, 0);
     position: absolute;
     transition: all .3s ease-in-out;
+}
+.menu-button.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 1.5rem;
+}
+.menu-button.active span:nth-child(2) {
+    width: 0%;
+}
+.menu-button.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 1.5rem;
 }
 .menu-button span:nth-child(1) {
     top: 0;
@@ -763,16 +777,16 @@ html {
     left: 7%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
     html {
-        font-size: calc(100vw / 102.4)
+        font-size: calc(100vw / 102.3)
     }
     .header_nav {
         padding: 1.6rem 0;
         margin-bottom: 0;
     }
     .header_nav .content {
-        padding: 0.2rem 3.2rem;
+        padding: 0.5rem 3.2rem;
     }
     .header_nav_menu,
     .left_content .logo {
@@ -785,6 +799,17 @@ html {
     }
     .about {
         padding-bottom: 3.5rem;
+    }
+    .content_hero {
+        padding: 0 1.6rem;
+        flex-direction: column-reverse;
+    }
+    .content_hero .right {
+        width: 100%;
+    }
+    .content_hero .left {
+        width: 100%;
+        margin-top: -5rem;
     }
     .content_hero .left {
         width: 50%;
@@ -844,8 +869,13 @@ html {
         width: 100%;
     }
     .about_pipi .content {
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
         z-index: 1;
+        padding-bottom: 10rem;
+    }
+    .about_container {
+        width: 100%;
     }
     .about_box {
         backdrop-filter: blur(1.3rem);
@@ -903,7 +933,10 @@ html {
     }
     .copy_address {
         padding: 0 3.2rem;
-        height: 3.8rem;
+        height: 5.6rem;
+    }
+    .chart_btn a {
+        font-size: 1rem;
     }
 }
 
@@ -932,17 +965,6 @@ html {
         height: 3.3rem;
         font-size: 1rem;
     }
-    .content_hero {
-        padding: 0 1.6rem;
-        flex-direction: column-reverse;
-    }
-    .content_hero .right {
-        width: 100%;
-    }
-    .content_hero .left {
-        width: 100%;
-        margin-top: -5rem;
-    }
     .content_hero .left .hero_txt {
         font-size: 1.8rem;
         line-height: 2.4rem;
@@ -956,13 +978,6 @@ html {
     .about_pipi {
         margin-top: 0rem;
         padding-bottom: 14rem;
-    }
-    .about_pipi .content {
-        width: 95%;
-        margin: 0 auto;
-    }
-    .about_container {
-        width: 100%;
     }
     .about_box h2 {
         font-size: 1.4rem;
@@ -1030,6 +1045,30 @@ html {
         margin-top: 5rem;
     }
 }
-@media only screen and (max-width: 499px) {
-
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: calc(100vw / 50)
+    }
+    .menu-button {
+        width: 2.7rem;
+        height: 2.3rem;
+    }
+    .center_content h1 {
+        line-height: 1;
+    }
+    .content_hero .left {
+        width: 100%;
+    }
+    .menu-button.active span:nth-child(1) {
+        top: 1rem;
+    }
+    .menu-button.active span:nth-child(3) {
+        bottom: 1rem;
+    }
+    .about_pipi {
+        padding-bottom: 10rem;
+    }
+    .roadmap_content {
+        width: 100%;
+    }
 }

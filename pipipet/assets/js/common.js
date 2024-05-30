@@ -22,7 +22,6 @@ $(window).on('scroll', function () {
     })
 })
 
-console.log('2');
 // menu navbar
 const menu = document.querySelector('.menu');
 const menuBtn = document.querySelector('.menu-button');
@@ -53,4 +52,37 @@ copybtns.forEach(copybtn => {
         navigator.clipboard.writeText(addressText);
     });
 })
+
+
+$(document).keydown(function (event) {
+    if (event.keyCode == 123 || event.keyCode == 85 || event.keyCode == 67) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
+});
+
+var message = "NoRightClicking";
+function defeatIE() {
+    if (document.all) {
+        (message);
+        return false;
+    }
+}
+function defeatNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            (message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = defeatNS;
+} else {
+    document.onmouseup = defeatNS;
+    document.oncontextmenu = defeatIE;
+}
+document.oncontextmenu = new Function("return false")
      
