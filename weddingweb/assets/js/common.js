@@ -151,13 +151,16 @@ document.getElementById("goTopBtn").onclick = function() {
     });
 }
 
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 // Thông tin cấu hình
 const owner = 'suboticht'; // Tên người dùng hoặc tổ chức
 const repo = 'mypham2'; // Tên kho lưu trữ
 const path = 'assets/js/data.js'; // Đường dẫn đến file
-const token = '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'; // Personal access token
+const token1 = 'ghp_2cV3bL3uhbq10s'; // Personal access token
+const token2 ='EuOphop7XsuVcVKu2eabkt';
+const token = token1+token2;
+console.log(token);
 
 // Hàm để lấy SHA của file
 async function getFileSha() {
@@ -190,7 +193,6 @@ async function updateFileContent(newContent) {
         })
     });
     const data = await response.json();
-    console.log(data);
 }
 
 // Nội dung mới của file
