@@ -150,3 +150,53 @@ document.getElementById("goTopBtn").onclick = function() {
         behavior: 'smooth'
     });
 }
+
+const fetch = require('node-fetch');
+
+// Thông tin cấu hình
+const owner = 'suboticht'; // Tên người dùng hoặc tổ chức
+const repo = 'mypham2'; // Tên kho lưu trữ
+const path = 'assets/js/data.js'; // Đường dẫn đến file
+const token = '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'; // Personal access token
+
+// Hàm để lấy SHA của file
+async function getFileSha() {
+    const url = `https://api.github.com/repos/${owner}/${repo}/weddingweb/${path}`;
+    const response = await fetch(url, {
+        headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+    const data = await response.json();
+    return data.sha;
+}
+
+// Hàm để cập nhật nội dung file
+async function updateFileContent(newContent) {
+    const sha = await getFileSha();
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            message: 'Updated file content via API',
+            content: Buffer.from(newContent).toString('base64'),
+            sha: sha
+        })
+    });
+    const data = await response.json();
+    console.log(data);
+}
+
+// Nội dung mới của file
+const newContent = 'This is the new content of the file.';
+
+// Cập nhật file
+$("#updateData").on("click", function() {
+    updateFileContent(newContent).catch(console.error);
+})
