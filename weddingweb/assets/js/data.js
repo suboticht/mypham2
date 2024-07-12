@@ -1,1 +1,6 @@
-[object Object],[object Object]
+const data = [
+    {
+        name: 'thắng',
+        mess: 'Xin chúc mừng'
+    }
+]
