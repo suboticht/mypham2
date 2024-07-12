@@ -1,6 +1,1 @@
-const data = [
-    {
-        name: 'thắng',
-        mess: 'Xin chúc mừng'
-    }
-]
+[object Object],[object Object]
