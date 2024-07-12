@@ -119,7 +119,7 @@ $(window).on('scroll', function () {
         }
     })
 })
-const audio = new Audio('/assets/sounds/my-love.mp3');
+const audio = new Audio('../sounds/my-love.mp3');
 audio.loop = true;
 $(".music").on("click", function() {
     if (audio.paused) {
