@@ -1,1 +1,6 @@
-This is the new content of the file.
+const data = [
+    {
+        name: 'thắng',
+        mess: 'Xin chúc mừng'
+    }
+]
