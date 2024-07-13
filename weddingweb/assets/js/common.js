@@ -256,22 +256,12 @@ form.addEventListener('submit', async function(event) {
             const newdata = {name: username, mess: description};
             data.push(newdata);
             const newdataStr = `const data = ${JSON.stringify(data)}`;
-            // console.log(newdataStr);
-            // return
-            // const scriptContent = atob(content);
-            // const jsonArrayString = scriptContent.match(/const data = (\[.*\]);/s)[1];
-            // const jsonArray = JSON.parse(scriptContent);
-            // console.log(jsonArray);
-            // return
-            // jsonArray.push(newEntry);
-
-            // const updatedScriptContent = scriptContent.replace(jsonArrayString, JSON.stringify(jsonArray, null, 2));
             await updateFileContent(owner, repo, path, newdataStr, token, sha);
             renderMess();
-            alert('File đã được cập nhật thành công!');
+            alert('Đã gửi lời chúc thành công!');
         } catch (error) {
             console.error(error);
-            alert('Đã có lỗi xảy ra khi cập nhật file.');
+            alert('Hiện tại không thể gửi lời chúc :( !');
         }
     }
 });
@@ -279,7 +269,7 @@ form.addEventListener('submit', async function(event) {
 function renderMess() {
     const messages = $(".messages");
 
-    messages.innerHTML = "";
+    messages.html("");
     data.forEach((item, index) => {
         console.log(item.name);
         const mess = `<div class="mess">
