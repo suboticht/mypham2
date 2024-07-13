@@ -1,6 +1,1 @@
-const data = [
-    {
-        name: 'Thang',
-        mess: 'Xin chuc mung'
-    },
-]
+const data = [{"name":"Thang","mess":"Xin chuc mung"},{"name":"kiemmanu","mess":"adsfgasgasgasdgsdfg"}]
