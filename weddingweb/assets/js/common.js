@@ -151,20 +151,27 @@ document.getElementById("goTopBtn").onclick = function() {
     });
 }
 
-// const fetch = require('node-fetch');
-
 // Thông tin cấu hình
-const owner = 'suboticht'; // Tên người dùng hoặc tổ chức
-const repo = 'mypham2'; // Tên kho lưu trữ
-const path = 'assets/js/data.js'; // Đường dẫn đến file
+
+const form = document.getElementById('userForm');
+const usernameInput = document.getElementById('username');
+const usernameErrorSpan = document.getElementById('usernameError');
+const descriptionInput = document.getElementById('description');
+const descriptionErrorSpan = document.getElementById('descriptionError');
+
+const owner = 'suboticht'; // Thay bằng tên người dùng hoặc tổ chức của bạn
+const repo = 'mypham2'; // Thay bằng tên kho lưu trữ của bạn
+const path = 'assets/js/data.js'; // Thay bằng đường dẫn đến file JS của bạn
 const token1 = 'ghp_2cV3bL3uhbq10s'; // Personal access token
 const token2 ='EuOphop7XsuVcVKu2eabkt';
 const token = token1+token2;
-console.log(token);
 
-// Hàm để lấy SHA của file
-async function getFileSha() {
-    const url = `https://api.github.com/repos/${owner}/${repo}/weddingweb/${path}`;
+// Hàm để mã hóa chuỗi UTF-8 thành base64
+function utf8_to_b64(str) {
+    return btoa(unescape(encodeURIComponent(str)));
+}
+async function getFileSha(owner, repo, path, token) {
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/weddingweb/${path}`;;
     const response = await fetch(url, {
         headers: {
             'Authorization': `token ${token}`,
@@ -175,10 +182,20 @@ async function getFileSha() {
     return data.sha;
 }
 
-// Hàm để cập nhật nội dung file
-async function updateFileContent(newContent) {
-    const sha = await getFileSha();
-    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+async function getFileContent(owner, repo, path, token) {
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/weddingweb/${path}`;;
+    const response = await fetch(url, {
+        headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+    const data = await response.json();
+    return data.content;
+}
+
+async function updateFileContent(owner, repo, path, updatedScriptContent, token, sha) {
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/weddingweb/${path}`;;
     const response = await fetch(url, {
         method: 'PUT',
         headers: {
@@ -187,18 +204,89 @@ async function updateFileContent(newContent) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            message: 'Updated file content via API',
-            content: Buffer.from(newContent).toString('base64'),
+            message: 'Updated JS file via API',
+            content: utf8_to_b64(updatedScriptContent),
             sha: sha
         })
     });
-    const data = await response.json();
+    return response.json();
 }
 
-// Nội dung mới của file
-const newContent = 'This is the new content of the file.';
+form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    usernameErrorSpan.textContent = '';
+    descriptionErrorSpan.textContent = '';
 
-// Cập nhật file
-$("#updateData").on("click", function() {
-    updateFileContent(newContent).catch(console.error);
-})
+    const usernameMinLength = 3;
+    const usernameMaxLength = 30;
+
+    const descriptionMinLength = 10;
+    const descriptionMaxLength = 200;
+
+    const username = usernameInput.value;
+    const description = descriptionInput.value;
+
+    let isValid = true;
+
+    if (username.length < usernameMinLength) {
+        usernameErrorSpan.textContent = `Tên phải có ít nhất ${usernameMinLength} ký tự.`;
+        isValid = false;
+    } else if (username.length > usernameMaxLength) {
+        usernameErrorSpan.textContent = `Tên không được dài quá ${usernameMaxLength} ký tự.`;
+        isValid = false;
+    }
+
+    if (description.length < descriptionMinLength) {
+        descriptionErrorSpan.textContent = `Mô tả phải có ít nhất ${descriptionMinLength} ký tự.`;
+        isValid = false;
+    } else if (description.length > descriptionMaxLength) {
+        descriptionErrorSpan.textContent = `Mô tả không được dài quá ${descriptionMaxLength} ký tự.`;
+        isValid = false;
+    }
+
+    if (isValid) {
+        const newEntry = {
+            username: username,
+            description: description
+        };
+
+        try {
+            const sha = await getFileSha(owner, repo, path, token);
+            const content = await getFileContent(owner, repo, path, token);
+            const newdata = {name: username, mess: description};
+            data.push(newdata);
+            const newdataStr = `const data = ${JSON.stringify(data)}`;
+            // console.log(newdataStr);
+            // return
+            // const scriptContent = atob(content);
+            // const jsonArrayString = scriptContent.match(/const data = (\[.*\]);/s)[1];
+            // const jsonArray = JSON.parse(scriptContent);
+            // console.log(jsonArray);
+            // return
+            // jsonArray.push(newEntry);
+
+            // const updatedScriptContent = scriptContent.replace(jsonArrayString, JSON.stringify(jsonArray, null, 2));
+            await updateFileContent(owner, repo, path, newdataStr, token, sha);
+            renderMess();
+            alert('File đã được cập nhật thành công!');
+        } catch (error) {
+            console.error(error);
+            alert('Đã có lỗi xảy ra khi cập nhật file.');
+        }
+    }
+});
+
+function renderMess() {
+    const messages = $(".messages");
+
+    messages.innerHTML = "";
+    data.forEach((item, index) => {
+        console.log(item.name);
+        const mess = `<div class="mess">
+                            <p><b>${item.name}</b></p>
+                            <p>${item.mess}</p>
+                        </div>`;
+        messages.append(mess);
+    });
+}
+renderMess();

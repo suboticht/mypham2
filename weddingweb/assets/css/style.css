@@ -928,7 +928,7 @@ h2.ttl + p {
 }
 .timeline_love {
   position: relative;
-  padding: 100px 0px 140px;
+  padding: 10rem 0px 14rem;
   margin: 0px;
   background-image: url("../images/photo-007.png");
   background-repeat: repeat-y;
@@ -1002,7 +1002,8 @@ h2.ttl + p {
 .timeline .heart_time {
   padding-top: 1.5rem;
 }
-.section_04 {
+.section_04,
+.section_08 {
   background: var(--primary-color) url("../images/Layer-6.png") no-repeat;
   background-size: cover;
   background-position: center bottom;
@@ -1022,6 +1023,9 @@ h2.ttl + p {
 }
 .places .item .img {
   position: relative;
+}
+.places .item .img img {
+  height: 100%;
 }
 .places .item .info {
   background: url("../images/bg-010.png") no-repeat;
@@ -1124,6 +1128,56 @@ h2.ttl + p {
   height: calc(100% - 1rem);
   inset: 0.5rem;
   border: 2px solid #fff;
+}
+.form_message {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.form_message label {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.form_message .form {
+  width: 60%;
+  background-color: #fff;
+  padding: 2rem 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border: 1px solid #741038;
+}
+.form_message .form input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1.5rem;
+}
+.form_message .form textarea {
+  height: 19.5rem;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.form_message .message {
+  width: 40%;
+}
+.form_message button {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #741038;
+  color: #fff;
+  padding: 0.7rem 3rem;
+}
+.form_message .messages {
+  width: 39%;
+  max-height: 41rem;
+  background-color: #fff;
+  padding: 2rem 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border: 1px solid #741038;
+  overflow-y: auto;
+}
+.form_message .messages .mess {
+  margin-bottom: 1rem;
 }
 footer {
   background-color: rgb(102, 19, 48);
@@ -1354,6 +1408,9 @@ li span {
   .timeline .heart_time {
     background-size: cover;
   }
+  .form_message label {
+    margin-bottom: 2rem;
+  }
 }
 @media only screen and (max-width: 750px) {
   html {
@@ -1456,6 +1513,25 @@ li span {
   .places .item p:nth-child(3), .modal-content .info p:nth-child(3) {
     font-size: 2.4rem;
     padding: 0 5rem;
+  }
+  .form_message .form input,
+  .form_message .form textarea {
+    font-size: 2.5rem;
+  }
+  .form_message {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .form_message button {
+    font-size: 3rem;
+  }
+  .form_message .form,
+  .form_message .messages {
+    font-size: 3rem;
+    width: 100%;
+  }
+  .form_message .messages p {
+    font-size: 3rem;
   }
   .openModalBtn {
     font-size: 2.5rem;

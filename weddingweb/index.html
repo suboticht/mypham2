@@ -225,6 +225,29 @@
                 </div>
             </div>
         </section>
+        <section class="section_08">
+            <div class="container">
+                <h2 class="ttl">Sổ Lưu Bút</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, id? Temporibus, corporis vero aut necessitatibus nulla debitis aspernatur impedit. Quidem libero praesentium dolor inventore provident ad repudiandae recusandae earum blanditiis?</p>
+                <div class="form_message">
+                    <div class="form">
+                        <form id="userForm">
+                            <label for="username">Tên:</label>
+                            <input type="text" id="username" name="username" required>
+                            <span id="usernameError" style="color:red;"></span>
+                            <br><br>
+                            <label for="description">Mô tả:</label>
+                            <textarea id="description" name="description" required></textarea>
+                            <span id="descriptionError" style="color:red;"></span>
+                            <br><br>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div id="messages_wrap" class="messages js_mess">
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="myModal modal modal01">
             <div class="modal-content">
               <span class="close">&times;</span>
@@ -262,7 +285,6 @@
                 </li>
             </ul>
         </div>
-        <button id="updateData">update data</button>
         <button id="goTopBtn" title="Go to top">TOP</button>
     </main>
     <footer>
@@ -271,6 +293,7 @@
             <p class="txt_02">Thank You Messages for Wedding for Family</p>
         </div>
     </footer>
+    <script src="./assets/js/data.js"></script>
     <script src="./assets/js/common.js"></script>
 </body>
 </html>
