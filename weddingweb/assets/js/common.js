@@ -158,6 +158,7 @@ const usernameInput = document.getElementById('username');
 const usernameErrorSpan = document.getElementById('usernameError');
 const descriptionInput = document.getElementById('description');
 const descriptionErrorSpan = document.getElementById('descriptionError');
+const messages = $(".messages");
 
 const owner = 'suboticht'; // Thay bằng tên người dùng hoặc tổ chức của bạn
 const repo = 'mypham2'; // Thay bằng tên kho lưu trữ của bạn
@@ -257,21 +258,21 @@ form.addEventListener('submit', async function(event) {
             data.push(newdata);
             const newdataStr = `const data = ${JSON.stringify(data)}`;
             await updateFileContent(owner, repo, path, newdataStr, token, sha);
-            renderMess();
+            messages.append(`<div class="mess">
+                            <p><b>${username}</b></p>
+                            <p>${description}</p>
+                        </div>`);
             alert('Đã gửi lời chúc thành công!');
         } catch (error) {
-            console.error(error);
             alert('Hiện tại không thể gửi lời chúc :( !');
         }
     }
 });
 
 function renderMess() {
-    const messages = $(".messages");
 
     messages.html("");
     data.forEach((item, index) => {
-        console.log(item.name);
         const mess = `<div class="mess">
                             <p><b>${item.name}</b></p>
                             <p>${item.mess}</p>
