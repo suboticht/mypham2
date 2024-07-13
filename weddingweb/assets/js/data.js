@@ -1,1 +1,1 @@
-const data = [{"name":"Quỳnh Như","mess":"Chúc mừng hạnh phúc !"},{"name":"Thắng","mess":"Chúc mừng hai bạn nhé !"},{"name":"minhee","mess":"chúc mừng hạnh phúc"},{"name":"Vợ chồng minh hee","mess":"Mừng hạnh phúc"}]
+const data = [{"name":"Quỳnh Như","mess":"Chúc mừng hạnh phúc !"},{"name":"Thắng","mess":"Chúc mừng hai bạn nhé !"},{"name":"minhee","mess":"chúc mừng hạnh phúc"},{"name":"Vợ chồng minh hee","mess":"Mừng hạnh phúc"},{"name":"Ba mẹ","mess":"Chúc mừng hai con"}]
