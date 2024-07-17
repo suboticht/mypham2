@@ -57,48 +57,48 @@ const main = () => {
 }
 if($("div").hasClass("days")) {
     main();
+    // Get the modal
+    var modal = document.getElementsByClassName("myModal")[0];
+    var modal2 = document.getElementsByClassName("myModal")[1];
+    
+    // Get the button that opens the modal
+    var btn = document.getElementsByClassName("openModalBtn")[0];
+    var btn2 = document.getElementsByClassName("openModalBtn")[1];
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close")[1];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+        document.body.classList.add("no-scroll");
+    }
+    btn2.onclick = function() {
+        modal2.style.display = "block";
+        document.body.classList.add("no-scroll");
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+      document.body.classList.remove("no-scroll");
+    }
+    span2.onclick = function() {
+      modal2.style.display = "none";
+      document.body.classList.remove("no-scroll");
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal || event.target == modal2) {
+        modal.style.display = "none";
+        modal2.style.display = "none";
+        document.body.classList.remove("no-scroll");
+      }
+    }
 }
 
-// Get the modal
-var modal = document.getElementsByClassName("myModal")[0];
-var modal2 = document.getElementsByClassName("myModal")[1];
-
-// Get the button that opens the modal
-var btn = document.getElementsByClassName("openModalBtn")[0];
-var btn2 = document.getElementsByClassName("openModalBtn")[1];
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-var span2 = document.getElementsByClassName("close")[1];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-    document.body.classList.add("no-scroll");
-}
-btn2.onclick = function() {
-    modal2.style.display = "block";
-    document.body.classList.add("no-scroll");
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  document.body.classList.remove("no-scroll");
-}
-span2.onclick = function() {
-  modal2.style.display = "none";
-  document.body.classList.remove("no-scroll");
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal || event.target == modal2) {
-    modal.style.display = "none";
-    modal2.style.display = "none";
-    document.body.classList.remove("no-scroll");
-  }
-}
 
 function isInViewport(el) {
     const rect = el.getBoundingClientRect();
