@@ -903,7 +903,6 @@ h2.ttl + p {
   background-position: center center;
   background-size: cover;
   padding: 8rem 0;
-  background-attachment: fixed;
 }
 .count_txt {
   text-transform: uppercase;
@@ -1063,10 +1062,9 @@ h2.ttl + p {
   padding: 5rem 0 10rem;
   background-color: rgb(102, 19, 48);
   background-image: url("../images/Layer-9.png");
-  background-position: 50%;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
 }
 .section_06 h2.ttl,
 .section_06 h2.ttl + p {
