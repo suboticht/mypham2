@@ -9,7 +9,7 @@
     <link href="https://db.onlinewebfonts.com/c/5aed2eb513548a59f3e2bff1bba07d12?family=Parfumerie+Script+W00+Regular" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <style>
-        body {
+        .main {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -17,13 +17,13 @@
             min-height: 100vh;
             margin: 0;
             background-color: #fafafa;
+            padding: 10rem 0;
         }
         .photo-grid {
-            width: 80%;
-            margin: auto;
+            width: 100%;
         }
         .photo-item {
-            width: 200px;
+            width: calc(25% - 10px);
             margin-bottom: 10px;
             position: relative;
         }
@@ -42,142 +42,200 @@
             left: 50%;
             width: 50px;
             height: 50px;
-            background: url('./loading.gif') center center no-repeat;
+            background: url('./assets/images/loading.gif') center center no-repeat;
             background-size: contain;
             transform: translate(-50%, -50%);
+        }
+        .photo-item:hover img {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .top {
+            text-align: center;
+            margin-top: 10rem;
+        }
+        .top a {
+            display: inline-block;
+            border: 1px solid #f1f1f1;
+            background-color: #3d0714bf;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            transition: all 0.3s;
+            font-size: 1.8rem;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        .modal-album {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content-album {
+            margin: auto;
+            display: block;
+            width: auto;
+            max-width: 500px;
+        }
+
+        .modal-content-album img {
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 750px) {
+            .photo-item {
+                width: calc(50% - 10px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="photo-grid">
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
-        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+    <div class="mainvisual">
+        <div class="mainvisual_content">
+            <div class="list-blocks">
+                <div class="mainvisual_heading">
+                    <h1>The wedding celebration of</h1>
+                </div>
+                <div class="block_part">
+                    <div class="part_item">Đăng Thắng</div>
+                    <div class="part_item">&</div>
+                    <div class="part_item">Quỳnh Như</div>
+                </div>
+                <img src="./assets/images/Shape-3.png" alt="love" width="400">
+                <div class="block_text">
+                    <p class="txt_01">INVITE YOU TO THEIR</p>
+                    <p class="txt_02">Wedding</p>
+                    <p class="txt_03">TO BE HELD</p>
+                    <p class="txt_04">ON JULY 28, 2024</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="main">
+        <div class="container">
+            <div class="aboutus_txt customwidth-700">
+                <h2 class="ttl">Album ảnh</h2>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image01.jpg" alt="Photo 1" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image02.jpg" alt="Photo 2" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image03.jpg" alt="Photo 3" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image04.jpg" alt="Photo 4" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image05.jpg" alt="Photo 5" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image06.jpg" alt="Photo 6" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image07.jpg" alt="Photo 7" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image08.jpg" alt="Photo 8" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image09.jpg" alt="Photo 9" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image10.jpg" alt="Photo 10" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image11.jpg" alt="Photo 11" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image12.jpg" alt="Photo 12" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image13.jpg" alt="Photo 13" class="lazyload"></div></div>
+                <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image14.jpg" alt="Photo 14" class="lazyload"></div></div>
+            </div>
+            <div class="top">
+                <a href="./index.html">Trang chủ</a>
+            </div>
+        </div>
+        <div id="myModal" class="modal-album">
+            <span class="close">&times;</span>
+            <div class="modal-content-album">
+                <img id="img01" alt="Enlarged Image">
+            </div>
+        </div>
+        <div class="option_bar">
+            <ul class="option_list">
+                <li class="option_list_item">
+                    <div class="music img">
+                        <img src="./assets/images/music-icon.png" alt="music">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p class="txt_01">ĐĂNG THẮNG &nbsp;&nbsp;VS &nbsp;&nbsp;QUỲNH NHƯ</p>
+            <p class="txt_02">Thank You Messages for Wedding for Family</p>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var grid = document.querySelector('.photo-grid');
-            var msnry = new Masonry(grid, {
-                itemSelector: '.photo-item',
-                columnWidth: 200,
-                gutter: 10
-            });
-            imagesLoaded(grid, function () {
-                msnry.layout();
-            });
-            document.addEventListener('lazyloaded', function() {
-                msnry.layout();
-            });
-            var lazyImages = document.querySelectorAll('.lazyload');
-            lazyImages.forEach(function(img) {
-                var loader = document.createElement('div');
-                loader.className = 'loader';
-                img.parentNode.appendChild(loader);
-                img.addEventListener('load', function() {
-                    loader.remove();
-                });
+        var grid = document.querySelector('.photo-grid');
+        var msnry = new Masonry(grid, {
+            itemSelector: '.photo-item',
+            columnWidth: '.grid-sizer',
+            gutter: 10
+        });
+        imagesLoaded(grid, function () {
+            msnry.layout();
+        });
+        document.addEventListener('lazyloaded', function() {
+            msnry.layout();
+        });
+        var lazyImages = document.querySelectorAll('.lazyload');
+        lazyImages.forEach(function(img) {
+            var loader = document.createElement('div');
+            loader.className = 'loader';
+            img.parentNode.appendChild(loader);
+            img.addEventListener('load', function() {
+                loader.remove();
             });
         });
+
+        // Modal functionality
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const imgs = document.querySelectorAll(".photo-item img")
+
+        imgs.forEach(function(img) {
+            img.addEventListener('click', function() {
+                console.log('1');
+                modal.style.display = "block";
+                modalImg.src = this.getAttribute('data-src');
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        modal.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
     </script>
 </body>
 </html>

@@ -882,7 +882,7 @@ h2.ttl + p {
 .box-image .box img {
   width: 100%;
   height: 460px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .box-image .box .name {
   font-size: 4rem;
@@ -1098,6 +1098,13 @@ h2.ttl + p {
 .albums_wrap .album {
   position: relative;
   flex: 30%;
+  height: 28.5rem;
+  overflow: hidden;
+}
+.albums_wrap .album img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .albums_wrap .album .text p {
   position: absolute;
@@ -1510,6 +1517,9 @@ li span {
   }
   .albums_wrap .album {
     flex: 45%;
+  }
+  .albums_wrap .album {
+    height: 25rem;
   }
   .places .item p:nth-child(2), .modal-content .info p:nth-child(2) {
     font-size: 2.8rem;
