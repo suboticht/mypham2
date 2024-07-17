@@ -1555,4 +1555,7 @@ li span {
   footer p:nth-child(1) {
     font-size: 4rem;
   }
+  .option_list .option_list_item:hover {
+    background-color: #fff;
+  }
 }
