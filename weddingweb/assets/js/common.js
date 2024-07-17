@@ -124,10 +124,10 @@ audio.loop = true;
 $(".music").on("click", function() {
     if (audio.paused) {
         audio.play();
-        $(".option_list_item").addClass('active');
+        $(".option_list_item.item_music").addClass('active');
     } else {
         audio.pause();
-        $(".option_list_item").removeClass('active');
+        $(".option_list_item.item_music").removeClass('active');
     }
 })
 
