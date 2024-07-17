@@ -893,6 +893,9 @@ h2.ttl + p {
   margin: 1rem 0;
   color: var(--text-color);
 }
+.box-image .box .about {
+  text-align: center;
+}
 .section_02 {
   background: url("../images/bg_mv.png") no-repeat;
   background-color: rgb(127, 47, 80);
@@ -1133,6 +1136,7 @@ h2.ttl + p {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 4rem;
 }
 .form_message label {
   display: inline-block;
