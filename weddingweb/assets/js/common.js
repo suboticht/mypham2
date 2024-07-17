@@ -44,19 +44,20 @@ const main = () => {
     const countDown = new Date(EVENTDATE).getTime()
     const x = setInterval(() => {
 
-            const now = new Date().getTime()
-            const distance = countDown - now
+        const now = new Date().getTime()
+        const distance = countDown - now
 
-            document.getElementById("days").innerText = Math.floor(distance / day)
-            document.getElementById("hours").innerText = Math.floor((distance % day) / (hour))
-            document.getElementById("minutes").innerText = Math.floor((distance % hour) / (minute))
-            document.getElementById("seconds").innerText = Math.floor((distance % minute) / second)
+        document.getElementById("days").innerText = Math.floor(distance / day)
+        document.getElementById("hours").innerText = Math.floor((distance % day) / (hour))
+        document.getElementById("minutes").innerText = Math.floor((distance % hour) / (minute))
+        document.getElementById("seconds").innerText = Math.floor((distance % minute) / second)
 
         //delay in milliseconds
     }, 0)
 }
-
-main();
+if($("div").hasClass("days")) {
+    main();
+}
 
 // Get the modal
 var modal = document.getElementsByClassName("myModal")[0];
