@@ -781,8 +781,18 @@ section {
 .mainvisual {
   position: relative;
   height: 100vh;
-  background: url("../images/bg_mv.png") no-repeat;
+  background: url(../images/image18.jpg) no-repeat;
+  background-position: center center;
   background-size: cover;
+}
+.mainvisual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff80;
 }
 .mainvisual_content {
   width: 100%;
@@ -898,8 +908,8 @@ h2.ttl + p {
   text-align: center;
 }
 .section_02 {
-  background: url("../images/bg_mv.png") no-repeat;
-  background-color: rgb(127, 47, 80);
+  position: relative;
+  background: url("../images/image15.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   padding: 8rem 0;
@@ -1060,8 +1070,7 @@ h2.ttl + p {
 }
 .section_06 {
   padding: 5rem 0 10rem;
-  background-color: rgb(102, 19, 48);
-  background-image: url("../images/Layer-9.png");
+  background-image: url("../images/image18.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
