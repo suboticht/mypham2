@@ -55,7 +55,7 @@ const main = () => {
         //delay in milliseconds
     }, 0)
 }
-if($("div").hasClass("days")) {
+if($("div").hasClass("count_txt")) {
     main();
     // Get the modal
     var modal = document.getElementsByClassName("myModal")[0];
