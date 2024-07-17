@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Thắng & Quỳnh Như</title>
+    <meta property="og:image" content="./assets/images/bg_mv.png">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+    <link href="https://db.onlinewebfonts.com/c/5aed2eb513548a59f3e2bff1bba07d12?family=Parfumerie+Script+W00+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fafafa;
+        }
+        .photo-grid {
+            width: 80%;
+            margin: auto;
+        }
+        .photo-item {
+            width: 200px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .photo-item img {
+            width: 100%;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .photo-item img.lazyloaded {
+            opacity: 1;
+        }
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: url('./loading.gif') center center no-repeat;
+            background-size: contain;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="photo-grid">
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200" alt="Photo 1" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400" alt="Photo 2" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x400" alt="Photo 3" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300" alt="Photo 4" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/250" alt="Photo 5" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/350" alt="Photo 6" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/300x200" alt="Photo 7" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/200x300" alt="Photo 8" class="lazyload"></div>
+        <div class="photo-item"><img data-src="https://via.placeholder.com/400x200" alt="Photo 9" class="lazyload"></div>
+    </div>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var grid = document.querySelector('.photo-grid');
+            var msnry = new Masonry(grid, {
+                itemSelector: '.photo-item',
+                columnWidth: 200,
+                gutter: 10
+            });
+            imagesLoaded(grid, function () {
+                msnry.layout();
+            });
+            document.addEventListener('lazyloaded', function() {
+                msnry.layout();
+            });
+            var lazyImages = document.querySelectorAll('.lazyload');
+            lazyImages.forEach(function(img) {
+                var loader = document.createElement('div');
+                loader.className = 'loader';
+                img.parentNode.appendChild(loader);
+                img.addEventListener('load', function() {
+                    loader.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
