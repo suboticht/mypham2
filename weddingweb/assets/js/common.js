@@ -43,6 +43,57 @@ const main = () => {
         //delay in milliseconds
     }, 0)
 }
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < $(window).height()
+    );
+}
+
+// fade in
+$('.FadeInDelay').each(function () {
+    if (isInViewport(this)) {
+        $(this).addClass('FadeIn')
+    }
+})
+$(window).on('scroll', function () {
+    $('.FadeInDelay').each(function () {
+        if (isInViewport(this)) {
+            $(this).addClass('FadeIn')
+        }
+    })
+})
+const audio = new Audio('/weddingweb/assets/sounds/my-love.mp3');
+audio.loop = true;
+$(".music").on("click", function() {
+    if (audio.paused) {
+        audio.play();
+        $(".option_list_item.item_music").addClass('active');
+    } else {
+        audio.pause();
+        $(".option_list_item.item_music").removeClass('active');
+    }
+})
+
+//scroll to top
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    var goTopBtn = document.getElementById("goTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        goTopBtn.style.display = "block";
+    } else {
+        goTopBtn.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("goTopBtn").onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 if($("div").hasClass("count_txt")) {
     main();
     // Get the modal
@@ -220,55 +271,3 @@ if($("div").hasClass("count_txt")) {
 
 }
 
-
-function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top < $(window).height()
-    );
-}
-
-// fade in
-$('.FadeInDelay').each(function () {
-    if (isInViewport(this)) {
-        $(this).addClass('FadeIn')
-    }
-})
-$(window).on('scroll', function () {
-    $('.FadeInDelay').each(function () {
-        if (isInViewport(this)) {
-            $(this).addClass('FadeIn')
-        }
-    })
-})
-const audio = new Audio('/weddingweb/assets/sounds/my-love.mp3');
-audio.loop = true;
-$(".music").on("click", function() {
-    if (audio.paused) {
-        audio.play();
-        $(".option_list_item.item_music").addClass('active');
-    } else {
-        audio.pause();
-        $(".option_list_item.item_music").removeClass('active');
-    }
-})
-
-//scroll to top
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    var goTopBtn = document.getElementById("goTopBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        goTopBtn.style.display = "block";
-    } else {
-        goTopBtn.style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-document.getElementById("goTopBtn").onclick = function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
