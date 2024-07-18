@@ -107,6 +107,9 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .album {
+            display: none;
+        }
 
         @media only screen and (max-width: 750px) {
             .photo-item {
@@ -142,33 +145,30 @@
             <div class="aboutus_txt customwidth-700">
                 <h2 class="ttl">Album ảnh</h2>
             </div>
-            <div class="album_01">
+            <div class="albums">
                 <div class="photo-grid">
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image01.jpg" alt="Photo 1" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image02.jpg" alt="Photo 2" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image03.jpg" alt="Photo 3" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image04.jpg" alt="Photo 4" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image05.jpg" alt="Photo 5" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image06.jpg" alt="Photo 6" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image07.jpg" alt="Photo 7" class="lazyload"></div></div>
-                </div>
-            </div>
-            <div class="album_02">
-                <div class="photo-grid">
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image01.jpg" alt="Photo 1" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image02.jpg" alt="Photo 2" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image03.jpg" alt="Photo 3" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image04.jpg" alt="Photo 4" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image05.jpg" alt="Photo 5" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image06.jpg" alt="Photo 6" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image07.jpg" alt="Photo 7" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image08.jpg" alt="Photo 8" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image09.jpg" alt="Photo 9" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image10.jpg" alt="Photo 10" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image11.jpg" alt="Photo 11" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image12.jpg" alt="Photo 12" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image13.jpg" alt="Photo 13" class="lazyload"></div></div>
-                    <div class="photo-item"><div class="grid-sizer"><img data-src="./assets/images/image14.jpg" alt="Photo 14" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image01.jpg" alt="Photo 1" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image02.jpg" alt="Photo 2" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image03.jpg" alt="Photo 3" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image04.jpg" alt="Photo 4" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image05.jpg" alt="Photo 5" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image06.jpg" alt="Photo 6" class="lazyload"></div></div>
+                    <div class="photo-item album album_01"><div class="grid-sizer"><img data-src="./assets/images/albums/thanhxuan/image07.jpg" alt="Photo 7" class="lazyload"></div></div>
+
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image01.jpg" alt="Photo 1" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image02.jpg" alt="Photo 2" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image03.jpg" alt="Photo 3" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image04.jpg" alt="Photo 4" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image05.jpg" alt="Photo 5" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image06.jpg" alt="Photo 6" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image07.jpg" alt="Photo 7" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image08.jpg" alt="Photo 8" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image09.jpg" alt="Photo 9" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image10.jpg" alt="Photo 10" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image11.jpg" alt="Photo 11" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image12.jpg" alt="Photo 12" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image13.jpg" alt="Photo 13" class="lazyload"></div></div>
+                    <div class="photo-item album album_02"><div class="grid-sizer"><img data-src="./assets/images/image14.jpg" alt="Photo 14" class="lazyload"></div></div>
                 </div>
             </div>
             <div class="top">
@@ -212,20 +212,43 @@
     <script src="./assets/js/common.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-        var grid = document.querySelector('.photo-grid');
-        var msnry = new Masonry(grid, {
-            itemSelector: '.photo-item',
-            columnWidth: '.grid-sizer',
-            gutter: 10
-        });
-        imagesLoaded(grid, function () {
-            msnry.layout();
-        });
-        document.addEventListener('lazyloaded', function() {
-            msnry.layout();
-        });
-        var lazyImages = document.querySelectorAll('.lazyload');
-        lazyImages.forEach(function(img) {
+
+            const getParam = function(){
+                var queryString = window.location.search;
+                var queryObject = new Object();
+                if(queryString){
+                queryString = queryString.substring(1);
+                var parameters = queryString.split('&');
+                
+                for (var i = 0; i < parameters.length; i++) {
+                    var element = parameters[i].split('=');
+                
+                    var paramName = decodeURIComponent(element[0]);
+                    var paramValue = decodeURIComponent(element[1]);
+                    queryObject[paramName] = paramValue;
+                }
+                }
+                return queryObject;
+            }
+            let albumID = getParam().album;
+            $('.photo-item').removeClass('photo-item');
+            $('.album_'+albumID).addClass('photo-item').show();
+
+            var albums = document.querySelectorAll('.albums');
+            var grid = document.querySelector('.photo-grid');
+            var msnry = new Masonry(grid, {
+                itemSelector: '.photo-item',
+                columnWidth: '.grid-sizer',
+                gutter: 10
+            });
+            imagesLoaded(grid, function () {
+                msnry.layout();
+            });
+            document.addEventListener('lazyloaded', function() {
+                msnry.layout();
+            });
+            var lazyImages = document.querySelectorAll('.lazyload');
+            lazyImages.forEach(function(img) {
             var loader = document.createElement('div');
             loader.className = 'loader';
             img.parentNode.appendChild(loader);
