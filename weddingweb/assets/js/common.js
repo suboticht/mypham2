@@ -253,17 +253,17 @@ $(window).on('scroll', function () {
         }
     })
 })
-// const audio = new Audio('/weddingweb/assets/sounds/my-love.mp3');
-// audio.loop = true;
-// $(".music").on("click", function() {
-//     if (audio.paused) {
-//         audio.play();
-//         $(".option_list_item.item_music").addClass('active');
-//     } else {
-//         audio.pause();
-//         $(".option_list_item.item_music").removeClass('active');
-//     }
-// })
+const audio = new Audio('/weddingweb/assets/sounds/my-love.mp3');
+audio.loop = true;
+$(".music").on("click", function() {
+    if (audio.paused) {
+        audio.play();
+        $(".option_list_item.item_music").addClass('active');
+    } else {
+        audio.pause();
+        $(".option_list_item.item_music").removeClass('active');
+    }
+})
 
 //scroll to top
 window.onscroll = function() {scrollFunction()};
