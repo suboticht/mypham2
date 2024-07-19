@@ -43,6 +43,17 @@ const main = () => {
         //delay in milliseconds
     }, 0)
 }
+function renderMess() {
+
+    messages.html("");
+    data.forEach((item, index) => {
+        const mess = `<div class="mess">
+                            <p><b>${item.name}</b></p>
+                            <p>${item.mess}</p>
+                        </div>`;
+        messages.append(mess);
+    });
+}
 function isInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -96,6 +107,7 @@ document.getElementById("goTopBtn").onclick = function() {
 }
 if($("div").hasClass("count_txt")) {
     main();
+    renderMess();
     // Get the modal
     var modal = document.getElementsByClassName("myModal")[0];
     var modal2 = document.getElementsByClassName("myModal")[1];
@@ -254,20 +266,4 @@ if($("div").hasClass("count_txt")) {
             }
         }
     });
-
-    function renderMess() {
-
-        messages.html("");
-        data.forEach((item, index) => {
-            const mess = `<div class="mess">
-                                <p><b>${item.name}</b></p>
-                                <p>${item.mess}</p>
-                            </div>`;
-            messages.append(mess);
-        });
-    }
-    renderMess();
-
-
 }
-
