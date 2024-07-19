@@ -44,7 +44,7 @@ const main = () => {
     }, 0)
 }
 function renderMess() {
-
+    const messages = $(".messages");
     messages.html("");
     data.forEach((item, index) => {
         const mess = `<div class="mess">
@@ -156,7 +156,6 @@ if($("div").hasClass("count_txt")) {
     const usernameErrorSpan = document.getElementById('usernameError');
     const descriptionInput = document.getElementById('description');
     const descriptionErrorSpan = document.getElementById('descriptionError');
-    const messages = $(".messages");
 
     const owner = 'suboticht'; // Thay bằng tên người dùng hoặc tổ chức của bạn
     const repo = 'mypham2'; // Thay bằng tên kho lưu trữ của bạn
