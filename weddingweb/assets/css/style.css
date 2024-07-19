@@ -1197,7 +1197,7 @@ h2.ttl + p {
 }
 .form_message .messages {
   width: 39%;
-  max-height: 45rem;
+  max-height: 43rem;
   background-color: #fff;
   padding: 2rem 1.5rem;
   font-size: 1.6rem;
